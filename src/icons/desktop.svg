@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>desktop</title>
-    <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M26,5 L27,6 L27,20 L26,21 L16,21 L16,23 L21.5,23 L21.5,25 L8.5,25 L8.5,23 L14,23 L14,21 L4,21 L3,20 L3,6 L4,5 L26,5 Z M25,18 L5,18 L5,19 L25,19 L25,18 Z M25,7 L5,7 L5,16 L25,16 L25,16 L25,7 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero"></path>
-    </g>
-</svg>

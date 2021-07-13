@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="" class="antialiased">
+<html lang="ru" class="antialiased">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
@@ -84,10 +84,9 @@
   <?php if (!option('debug') and $site->vendors()->isNotEmpty()): ?>
     <?= $site->vendors() ?>
   <?php endif; ?>
+   <link rel="preload" href="/assets/static/fonts/ArialNarrow.woff2" as="font" crossorigin="">
+   <link rel="preload" href="/assets/static/fonts/NormffitiGX.woff2" as="font" crossorigin="">
 </head>
 
-<body class="<?= e(option('debug') == true, 'debug-mq') ?>">
-<div
-  x-data="App.hi()"
-  @app:ready.window="toggle()"
-  @breakpoints:change.window="toggle()"></div>
+<body data-scroll-container class="<?= e(option('debug') == true, 'debug-mq') ?>">
+

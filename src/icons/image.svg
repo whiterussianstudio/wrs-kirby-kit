@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>image</title>
-    <g id="image" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Combined-Shape-2" transform="translate(3.000000, 5.000000)" fill="#000000" fill-rule="nonzero">
-            <path d="M23,0 L24,1 L24,19 L23,20 L1,20 L0,19 L0,1 L1,0 L23,0 Z M6.08119301,7.71094792 L2,11.792 L2,18 L16.37,18 L6.08119301,7.71094792 Z M16.5940416,10.4142136 L14.104,12.905 L19.199,18 L22,18 L22,15.82 L16.5940416,10.4142136 Z M22,2 L2,2 L2,8.962 L5.37408623,5.58962758 L6.78829979,5.58962758 L12.689,11.49 L15.8869349,8.29289322 L17.3011484,8.29289322 L22,12.992 L22,2 Z" id="Combined-Shape"></path>
-        </g>
-    </g>
-</svg>

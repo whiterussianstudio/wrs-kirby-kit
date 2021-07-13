@@ -1,3 +1,48 @@
-title: Site
-preset: pages
-unlisted: true
+title:
+  ru: Сайт
+  en: Site
+
+tabs:
+  content:
+    label:
+      en: Pages
+      ru: Страницы
+    icon: home
+    fields:
+      hero_title: 
+        label: Заголовок
+        type: writer
+      about_text:
+        label: О нас
+        type: textarea
+        size: small
+      projects:
+        label: Проекты
+        type: structure
+        fields:
+          image:
+            label: Изображение
+            type: files
+            max: 1
+            required: true
+          logo:
+            label: Логотип (svg)
+            type: files
+            max: 1
+            help: Используйте только svg!
+  contacts:
+    label: Контакты
+    icon: phone
+    type: fields
+    fields:
+      instagram: 
+        label: Instagram
+        type: url
+        width: 1/2
+      telegram: 
+        label: Telegram
+        type: url
+        width: 1/2
+  vendors: tabs/vendors
+  meta: tabs/meta
+
