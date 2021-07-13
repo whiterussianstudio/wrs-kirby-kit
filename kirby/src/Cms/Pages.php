@@ -23,11 +23,18 @@ use Kirby\Exception\InvalidArgumentException;
 class Pages extends Collection
 {
     /**
-     * Cache for the index
+     * Cache for the index only listed and unlisted pages
      *
      * @var \Kirby\Cms\Pages|null
      */
     protected $index = null;
+
+    /**
+     * Cache for the index all statuses also including drafts
+     *
+     * @var \Kirby\Cms\Pages|null
+     */
+    protected $indexWithDrafts = null;
 
     /**
      * All registered pages methods
@@ -48,7 +55,7 @@ class Pages extends Collection
     public function add($object)
     {
         // add a page collection
-        if (is_a($object, static::class) === true) {
+        if (is_a($object, self::class) === true) {
             $this->data = array_merge($this->data, $object->data);
 
         // add a page by id
@@ -331,24 +338,31 @@ class Pages extends Collection
      */
     public function index(bool $drafts = false)
     {
-        if (is_a($this->index, 'Kirby\Cms\Pages') === true) {
-            return $this->index;
+        // get object property by cache mode
+        $index = $drafts === true ? $this->indexWithDrafts : $this->index;
+
+        if (is_a($index, 'Kirby\Cms\Pages') === true) {
+            return $index;
         }
 
-        $this->index = new Pages([], $this->parent);
+        $index = new Pages([], $this->parent);
 
         foreach ($this->data as $pageKey => $page) {
-            $this->index->data[$pageKey] = $page;
-            $index = $page->index($drafts);
+            $index->data[$pageKey] = $page;
+            $pageIndex = $page->index($drafts);
 
-            if ($index) {
-                foreach ($index as $childKey => $child) {
-                    $this->index->data[$childKey] = $child;
+            if ($pageIndex) {
+                foreach ($pageIndex as $childKey => $child) {
+                    $index->data[$childKey] = $child;
                 }
             }
         }
 
-        return $this->index;
+        if ($drafts === true) {
+            return $this->indexWithDrafts = $index;
+        }
+
+        return $this->index = $index;
     }
 
     /**
@@ -398,7 +412,7 @@ class Pages extends Collection
         }
 
         // merge an entire collection
-        if (is_a($args[0], static::class) === true) {
+        if (is_a($args[0], self::class) === true) {
             $collection = clone $this;
             $collection->data = array_merge($collection->data, $args[0]->data);
             return $collection;

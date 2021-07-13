@@ -533,7 +533,9 @@ trait PageActions
                 $lang   = $this->kirby()->defaultLanguage() ?? null;
                 $field  = $this->content($lang)->get('date');
                 $date   = $field->isEmpty() ? 'now' : $field;
-                return date($format, strtotime($date));
+                // TODO: in 3.6.0 throw an error if date() doesn't
+                // return a number, see https://github.com/getkirby/kirby/pull/3061#discussion_r552783943
+                return (int)date($format, strtotime($date));
                 break;
             case 'default':
 
@@ -837,17 +839,17 @@ trait PageActions
      * Updates the page data
      *
      * @param array|null $input
-     * @param string|null $language
+     * @param string|null $languageCode
      * @param bool $validate
      * @return self
      */
-    public function update(array $input = null, string $language = null, bool $validate = false)
+    public function update(array $input = null, string $languageCode = null, bool $validate = false)
     {
         if ($this->isDraft() === true) {
             $validate = false;
         }
 
-        $page = parent::update($input, $language, $validate);
+        $page = parent::update($input, $languageCode, $validate);
 
         // if num is created from page content, update num on content update
         if ($page->isListed() === true && in_array($page->blueprint()->num(), ['zero', 'default']) === false) {

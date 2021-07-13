@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'locomotive';
 
 @layer utilities {
   @variants responsive {
@@ -13,5 +14,224 @@
       min-height: 100vh;
       min-height: calc(var(--vh) * 100);
     }
+    .max-full-vh {
+      max-height: 100vh;
+      max-height: calc(var(--vh) * 100);
+    }
   }
+}
+
+@layer base{
+  @font-face {
+    font-family: 'ArialNarrow';
+    src: url('/assets/static/fonts/ArialNarrow.woff2')
+        format('woff2'),
+      url('/assets/static/fonts/ArialNarrow.woff') format('woff');
+  } 
+
+  @font-face {
+    font-family: 'NormffitiGX';
+    src: url('/assets/static/fonts/NormffitiGX.woff2')
+        format('woff2');
+  } 
+
+  .text-base{
+    font-size: 25px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    @screen xs{
+      font-size: 40px;
+    }
+    @screen sm{
+      font-size: 50px;
+    }
+  }
+
+  .image{
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: auto;
+      height: auto;
+      min-width: 100%;
+      min-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .lazyload,
+  .lazyloading {
+    opacity: 0;
+  }
+  .lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+
+  body{
+    @apply text-base font-base;
+    background-color: var(--active-color, #209FF3);
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 0 10px;
+    @screen xs{
+      padding: 0 20px;
+    }
+  }
+
+  @variants hover{
+    .text-bg{
+      color: var(--active-color, #209FF3);
+    }
+  }
+}
+
+* {
+  cursor: url('/assets/static/icons/cursor.png') 20 25, auto; /* Legacy */
+  cursor: url('/assets/static/icons/cursor.svg') 20 25, auto; /* FF */
+  cursor: -webkit-image-set(url('/assets/static/icons/cursor.png') 1x, url('/assets/static/icons/cursor@2x.png') 2x) 20 25, auto; /* Webkit */
+}
+
+
+.logo{
+  @apply font-norm;
+  font-variation-settings: "wght" var(--font-weight, 100);
+  font-variant: diagonal-fractions;
+  font-size: 35vw;
+  color: var(--active-color, #209FF3);
+  text-shadow:
+   -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff;
+  z-index: 15;
+  @screen sm{
+    font-size: 30vw;
+    text-shadow:
+   -2px -2px 0 #fff,  
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+     2px 2px 0 #fff;
+  }
+  div{
+    &:nth-child(0n+1){
+      z-index: 30
+    }
+    &:nth-child(0n+2){
+      z-index: 20
+    }
+    &:nth-child(0n+3){
+      z-index: 10
+    }
+    &:nth-child(0n+4){
+      z-index: 5
+    }
+  }
+}
+
+.text-rounded{
+  display: inline;
+  padding: 2px 8px;
+  border-radius: 5px;
+  background: #FFFFFF;
+  box-shadow: -10px 0 0px 0px #ffffff, 10px 0 0 #ffffff;
+  box-decoration-break: clone;
+  text-transform: uppercase;
+  color: var(--active-color);
+  line-height: 1.2;
+  @screen xs{
+    padding: 2px 12px;
+  }
+}
+
+.link{
+  @apply relative py-10 px-10 xs:px-15;
+  &:after{
+    @apply inset-0 w-full rounded-base bg-white transition;
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  &:hover{
+    &:after{
+      opacity: 1;
+    }
+  }
+  &-plug{
+    &-visible{
+      &:after{
+        opacity: 1;
+      }
+    }
+    &-left{
+      &:hover{
+        &:after{
+          transform: rotate(-2deg) scale(1.05);
+        }
+      }
+    }
+    &-right{
+      &:hover{
+        &:after{
+          transform: rotate(2deg) scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+
+
+.hero-title{
+  padding-bottom: 5vh;
+}
+
+.project{
+   margin-top: -10%;
+   z-index: 30;
+   &:hover{
+    z-index: 40 !important;
+   }
+}
+
+.project{
+  &:nth-child(3n + 2){
+    margin-right: -25%;
+    z-index: 10;
+    @screen sm{
+      margin-right: -50%;
+    }
+  }
+  &:nth-child(3n){
+    margin-right: 5%;
+    z-index: 10;
+    @screen sm{
+      margin-right: 10%;
+    }
+  }
+}
+
+.is-not-inview{
+  @apply transition ease-in-out duration-500;
+  transform: scale(0.5);
+  transform-origin: bottom;
+}
+
+.is-inview{
+  transform: scale(1);
+}
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+.lazyloaded {
+  opacity: 1;
 }

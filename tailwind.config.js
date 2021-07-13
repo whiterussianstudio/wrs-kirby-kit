@@ -20,7 +20,8 @@ module.exports = {
     maxWidth: false,
     container: false,
     animation: false,
-    appearance: false
+    appearance: false,
+    fontSize: false,
   },
   future: {
     removeDeprecatedGapUtilities: true,
@@ -28,9 +29,28 @@ module.exports = {
   },
   purge: ['site/templates/**/*.php', 'site/snippets/**/*.php'],
   theme: {
+    extend: {
+      padding: {
+        '1/2-screen' : '50vh',
+      }
+    },
     screens: {
+      xs: '540px',
       sm: '768px',
+      md: '1040px',
       lg: '1440px'
+    },
+    borderRadius: {
+      'base': '10px'
+    },
+    colors: {
+      'white': '#ffffff',
+      'black': '#000000',
+      'transparent': 'transparent'
+    },
+    fontFamily: {
+     'base': ['ArialNarrow', 'sans-serif'],
+     'norm': ['NormffitiGX', 'sans-serif'],
     },
     spacing: generateSpacing()
   },

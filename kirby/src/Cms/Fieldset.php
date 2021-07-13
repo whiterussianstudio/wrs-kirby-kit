@@ -50,7 +50,6 @@ class Fieldset extends Item
         $this->disabled  = $params['disabled'] ?? false;
         $this->icon      = $params['icon'] ?? null;
         $this->model     = $this->parent;
-        $this->kirby     = $this->parent->kirby();
         $this->name      = $this->createName($params['name'] ?? Str::ucfirst($this->type));
         $this->label     = $this->createLabel($params['label'] ?? null);
         $this->preview   = $params['preview'] ?? null;
@@ -61,8 +60,8 @@ class Fieldset extends Item
 
         if (
             $this->translate === false &&
-            $this->kirby->multilang() === true &&
-            $this->kirby->language()->isDefault() === false
+            $this->kirby()->multilang() === true &&
+            $this->kirby()->language()->isDefault() === false
         ) {
             // disable and unset the fieldset if it's not translatable
             $this->unset    = true;
@@ -106,6 +105,12 @@ class Fieldset extends Item
 
         // normalize tabs props
         foreach ($tabs as $name => $tab) {
+            // unset/remove tab if its property is false
+            if ($tab === false) {
+                unset($tabs[$name]);
+                continue;
+            }
+
             $tab = Blueprint::extend($tab);
 
             $tab['fields'] = $this->createFields($tab['fields'] ?? []);
