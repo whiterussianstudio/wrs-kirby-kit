@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>close</title>
-    <g id="close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Combined-Shape-2" transform="translate(7.000000, 7.000000)" fill="#000000" fill-rule="nonzero">
-            <path d="M14.5521467,-1.84741111e-13 L15.9705381,1.41002333 L9.419,8 L16.0094201,14.5521467 L14.5993968,15.9705381 L8.009,9.418 L1.45727344,16.0094201 L0.0388820217,14.5993968 L6.59,8.008 L2.87964097e-15,1.45727344 L1.41002333,0.0388820217 L8,6.59 L14.5521467,-1.84741111e-13 Z" id="Combined-Shape"></path>
-        </g>
-    </g>
-</svg>

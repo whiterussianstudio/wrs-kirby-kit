@@ -1,2 +1,2 @@
 // Components
-import './hi'
+import './scrollBehavior'

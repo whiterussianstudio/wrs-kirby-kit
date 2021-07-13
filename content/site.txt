@@ -1,1 +1,71 @@
-Title: Site Title
+Title: NORM 1458
+
+----
+
+Hero-title: <p>NORM 1458.</p><p> Креатив как сервис</p>
+
+----
+
+About-text: Креативное агентство из Москвы. разбираемся в диджитале, знаем как устроены социальные сети и понимаем, как там себя вести, чтобы тебя полюбили
+
+----
+
+Projects:
+
+- 
+  image:
+    - tink.jpg
+  logo:
+    - tink.svg
+- 
+  image:
+    - yand.jpg
+  logo:
+    - yandex.svg
+- 
+  image:
+    - sber.jpg
+  logo:
+    - sberz.svg
+- 
+  image:
+    - ozon.jpg
+  logo:
+    - ozon.svg
+- 
+  image:
+    - sberk.jpg
+  logo:
+    - sberk.svg
+
+----
+
+Instagram: https://www.instagram.com/norm1458/
+
+----
+
+Telegram: https://web.telegram.org/#/login
+
+----
+
+Vendors: 
+
+----
+
+Meta-title: NORM 1458
+
+----
+
+Meta-desc: NORM 1458 site
+
+----
+
+Og-title: 
+
+----
+
+Og-site: 
+
+----
+
+Og-desc: 

@@ -4,9 +4,6 @@ import 'alpinejs'
 import 'lazysizes'
 import 'unfetch/polyfill'
 
-import Swup from 'swup'
-import SwupPreloadPlugin from '@swup/preload-plugin'
-
 import smoothscroll from 'smoothscroll-polyfill'
 
 import '@components'
@@ -23,6 +20,7 @@ smoothscroll.polyfill()
 ready(() => {
   resized()
 })
+
 
 // Swup instance
 //

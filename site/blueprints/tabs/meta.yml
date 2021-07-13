@@ -1,6 +1,7 @@
 label:
   en: Meta
   ru: Мета
+icon: file-document
 columns:
   - width: 1/1
     sections:

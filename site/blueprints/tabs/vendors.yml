@@ -1,6 +1,7 @@
 label:
   en: Vendors
   ru: Вендорные скрипты
+icon: code
 fields:
   vendors:
     label: Вендорные скрипты
